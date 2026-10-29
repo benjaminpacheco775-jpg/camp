@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Campus Virtual EPET 34</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap">
+<style>
+:root{--bg:#f4f5fb;--card:#fff;--tx:#161a2b;--mu:#5c6580;--pr:#4338ca;--pr2:#6366f1;--prt:#fff;--bd:#e3e6f2;--ok:#0f8a4d;--okb:#e1f6ea;--lk:#8a92aa;--lkb:#eceef6;--sh:0 1px 2px rgba(20,24,60,.06),0 6px 20px rgba(20,24,60,.06);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c0f1d;--card:#161a2d;--tx:#eceffa;--mu:#a0a9c4;--pr:#8b93ff;--pr2:#6366f1;--prt:#0c0f1d;--bd:#262c45;--ok:#5fd68a;--okb:#13301f;--lk:#7b84a0;--lkb:#20263b;--sh:none;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c0f1d;--card:#161a2d;--tx:#eceffa;--mu:#a0a9c4;--pr:#8b93ff;--pr2:#6366f1;--prt:#0c0f1d;--bd:#262c45;--ok:#5fd68a;--okb:#13301f;--lk:#7b84a0;--lkb:#20263b;--sh:none;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 "Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.hide{display:none!important}
+button{font:inherit;cursor:pointer;color:inherit}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px 40px}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800}
+.logo{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,var(--pr2),#a855f7);color:#fff;display:grid;place-items:center;font-size:1.1rem}
+.brand small{display:block;font-weight:500;color:var(--mu);font-size:.72rem;line-height:1.1}
+.ghost{border:1px solid var(--bd);background:var(--card);border-radius:10px;padding:8px 14px;font-size:.9rem}
+.ghost:hover{border-color:var(--pr)}
+.hero{background:linear-gradient(135deg,#3730a3,#6d28d9 70%,#a855f7);color:#fff;border-radius:20px;padding:26px 24px;margin:6px 0 22px;box-shadow:var(--sh)}
+.hero h1{margin:0 0 4px;font-size:1.55rem;font-weight:800}.hero p{margin:0;opacity:.9}
+.chip{display:inline-block;background:rgba(255,255,255,.2);border-radius:99px;padding:3px 12px;font-size:.8rem;font-weight:700;margin-bottom:10px}
+.search{width:100%;padding:12px 16px;border:1px solid var(--bd);border-radius:12px;background:var(--card);color:var(--tx);font:inherit;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.sc{text-align:left;background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:16px;box-shadow:var(--sh);position:relative;overflow:hidden;transition:transform .15s,border-color .15s}
+.sc:hover{transform:translateY(-3px);border-color:hsl(var(--h) 65% 55%)}
+.sc::before{content:"";position:absolute;inset:0 auto 0 0;width:5px;background:hsl(var(--h) 65% 55%)}
+.ic{width:42px;height:42px;border-radius:12px;background:hsl(var(--h) 80% 93%);color:hsl(var(--h) 60% 35%);display:grid;place-items:center;font-weight:800;margin-bottom:10px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ic{background:hsl(var(--h) 40% 22%);color:hsl(var(--h) 80% 80%)}}
+.sc b{display:block;font-size:1.02rem}.sc small{color:var(--mu)}
+.dots{display:flex;gap:5px;margin:8px 0 4px}.dots i{width:22px;height:6px;border-radius:9px;background:var(--lkb)}.dots i.on{background:var(--ok)}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:20px;box-shadow:var(--sh);margin-bottom:14px}
+.back{margin-bottom:14px}
+.dh{display:flex;align-items:center;gap:12px;margin-bottom:14px}.dh h2{margin:0;font-size:1.4rem}.dh small{color:var(--mu)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.tab{border:1px solid var(--bd);background:var(--card);border-radius:12px;padding:9px 16px;font-weight:700;font-size:.9rem}
+.tab.on{background:var(--pr);color:var(--prt);border-color:var(--pr)}.tab.lock{background:var(--lkb);color:var(--lk)}
+.intro{margin:0 0 14px;color:var(--mu)}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.cp{background:var(--bg);border:1px solid var(--bd);border-radius:12px;padding:10px 14px;font-size:.88rem}.cp b{display:block;font-size:1.15rem}
+details{border:1px solid var(--bd);border-radius:14px;margin-bottom:10px;background:var(--card);overflow:hidden}
+summary{cursor:pointer;padding:14px 16px;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::after{content:"＋";color:var(--pr)}details[open] summary::after{content:"－"}summary::-webkit-details-marker{display:none}
+summary span{display:block;font-weight:500;color:var(--mu);font-size:.88rem}
+.gb{padding:0 16px 16px}.gb h4{margin:6px 0;font-size:.9rem;color:var(--pr)}.gb ol{margin:0;padding-left:20px}.gb li{margin:5px 0}
+.note{font-size:.8rem;color:var(--mu);margin-top:10px}
+.locked{background:var(--lkb);color:var(--lk);border-radius:14px;padding:28px;text-align:center}
+.login{min-height:100vh;display:grid;place-items:center;padding:20px;background:radial-gradient(900px 400px at 0 0,rgba(99,102,241,.22),transparent),radial-gradient(700px 400px at 100% 100%,rgba(168,85,247,.2),transparent)}
+.lc{width:100%;max-width:400px;background:var(--card);border:1px solid var(--bd);border-radius:22px;padding:28px;box-shadow:var(--sh)}
+.lc h1{margin:12px 0 2px;font-size:1.5rem;font-weight:800}.lc p{margin:0 0 14px;color:var(--mu);font-size:.9rem}
+label{display:block;font-size:.82rem;font-weight:700;color:var(--mu);margin:12px 0 5px}
+input{width:100%;padding:11px 13px;border:1px solid var(--bd);border-radius:12px;background:var(--bg);color:var(--tx);font:inherit}
+input:focus,.search:focus{outline:2px solid var(--pr2);outline-offset:1px}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:var(--bg);border:1px solid var(--bd);border-radius:12px;padding:4px}
+.seg button{border:0;background:none;border-radius:9px;padding:8px;font-weight:700}.seg button.on{background:var(--pr);color:var(--prt)}
+.go{width:100%;margin-top:16px;border:0;border-radius:12px;padding:12px;font-weight:800;background:linear-gradient(135deg,var(--pr2),#9333ea);color:#fff}
+.err{color:#d32f2f;font-size:.88rem;min-height:1.3em;margin-top:8px}
+.hint{margin-top:14px;font-size:.78rem;color:var(--mu);border-top:1px dashed var(--bd);padding-top:10px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--bd)}
+.row small{color:var(--mu);display:block}
+.sw{flex:none;position:relative;width:50px;height:28px;border-radius:99px;background:var(--lk);border:0;padding:0}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;transition:.15s}
+.sw.on{background:var(--ok)}.sw.on::after{left:25px}
+.pill{font-size:.75rem;color:var(--mu);margin-left:8px;font-weight:500}
+.th{font-size:1.1rem;margin:0 0 6px}
+</style>
+</head>
+<body>
+<section id="vLogin" class="login"><div class="lc">
+  <div class="logo">🎓</div><h1>Campus Virtual</h1><p>EPET N.º 34 · Ingresá con tu usuario</p>
+  <div class="seg"><button id="rE" class="on">Estudiante</button><button id="rP">Profesor</button></div>
+  <label for="u">Usuario</label><input id="u" autocomplete="username">
+  <label for="c">Contraseña</label><input id="c" type="password" autocomplete="current-password">
+  <div class="err" id="err"></div>
+  <button class="go" id="go">Ingresar</button>
+  <div class="hint" id="hint"></div>
+</div></section>
+<div class="wrap hide" id="vApp">
+  <div class="bar"><div class="brand"><div class="logo">🎓</div><div>Campus EPET 34<small>Campus Virtual</small></div></div><button class="ghost" id="out">Cerrar sesión</button></div>
+  <div id="main"></div>
+</div>
+<script>
+const TEMARIO={
+1:{"Matemática":["Números naturales~Operaciones, orden y uso del sistema decimal|Divisibilidad~Múltiplos, divisores, MCD y mcm","Fracciones~Qué son, cómo compararlas y operar con ellas|Decimales~Operaciones y paso de fracción a decimal","Proporcionalidad~Relación entre magnitudes y regla de tres simple|Figuras y áreas~Perímetro y área de figuras planas"],
+"Lengua":["El cuento~Personajes, narrador y estructura del relato|Sustantivo y adjetivo~Cómo reconocerlos y concordar","La noticia~Qué, quién, cuándo, dónde y por qué|El verbo~Tiempos, modos y conjugación","Texto teatral~Diálogo, acotaciones y actos|Ortografía~Reglas de tildes y uso de b, v, s, c"],
+"Dibujo Técnico":["Instrumentos de dibujo~Uso de escuadras, regla y compás|Líneas y rotulado~Tipos de línea y letras normalizadas","Figuras geométricas~Trazado de polígonos y circunferencias|Escalas~Cómo ampliar y reducir un dibujo","Vistas ortogonales~Frente, planta y perfil de una pieza|Acotación~Cómo poner medidas en un plano"],
+"Inglés":["Verb to be~Presente afirmativo, negativo e interrogativo|Greetings~Saludos y presentaciones personales","Present simple~Rutinas y hábitos diarios|Family vocabulary~Describir a la familia y a las personas","There is / There are~Describir lugares y objetos|Prepositions of place~in, on, under, next to"],
+"Tecnología":["Seguridad en el taller~Normas, elementos de protección y prevención|Herramientas manuales~Nombre, uso y cuidado","Materiales~Madera, metales y plásticos y sus propiedades|Medición~Uso de calibre y regla","Proyecto tecnológico~Pasos: problema, diseño y construcción|Electricidad básica~Circuito simple y componentes"],
+"Historia":["Prehistoria~Paleolítico, Neolítico y primeras sociedades|Primeras civilizaciones~Mesopotamia y Egipto","Grecia~Polis, democracia y cultura|Roma~República, Imperio y legado","Edad Media~Feudalismo y sociedad medieval|Pueblos originarios de América~Mayas, aztecas e incas"],
+"Ética":["Normas y valores~Para qué sirven las reglas de convivencia|Derechos del adolescente~Qué derechos tenés","Convivencia~Respeto, diálogo y resolución de conflictos|Discriminación~Qué es y cómo prevenirla","Ciudadanía~Derechos y deberes en la comunidad|Medios y redes~Uso responsable y ciberconvivencia"]},
+2:{"Matemática":["Números enteros~Operaciones y recta numérica|Potenciación y radicación~Propiedades y cálculo","Racionales~Fracciones y decimales: operaciones combinadas|Proporcionalidad~Directa, inversa y porcentaje","Ecuaciones~Resolver ecuaciones de primer grado|Geometría~Ángulos y clasificación de triángulos"],
+"Lengua":["Leyenda y mito~Origen, rasgos y personajes|Tipos de palabras~Pronombres, adverbios y conectores","Texto expositivo~Cómo se organiza y se resume la información|Oración y sujeto~Sujeto, predicado y concordancia","Poesía~Verso, rima y figuras retóricas|Producción de textos~Planificar, escribir y revisar"],
+"Dibujo Técnico II":["Perspectiva caballera~Dibujar piezas en 3D con ejes y ángulos|Perspectiva isométrica~Trazado con ejes a 30°","Cortes y secciones~Cómo mostrar el interior de una pieza|Escalas y acotación~Aplicar las normas en planos","Planos de conjunto~Representar piezas ensambladas|Croquis a mano alzada~Bocetar piezas rápidamente"],
+"Inglés":["Past simple~Verbos regulares e irregulares en pasado|Time expressions~yesterday, last week, ago","Present continuous~Acciones que ocurren ahora|Comparatives~Comparar con -er y more","Future with going to~Planes e intenciones|Reading comprehension~Estrategias para entender textos"],
+"Tecnología":["Procesos productivos~De la materia prima al producto|Mecanismos~Palancas, poleas y engranajes","Energía~Fuentes renovables y no renovables|Electricidad~Circuitos serie y paralelo","Automatismos~Sensores y actuadores básicos|Proyecto tecnológico~Diseñar y construir un prototipo"],
+"Historia":["Edad Media tardía~Crisis del feudalismo y burguesía|Renacimiento~Humanismo, arte y ciencia","Conquista de América~Viajes, conquista y colonización|Sociedad colonial~Castas, economía y trabajo","Reformas borbónicas~Virreinato del Río de la Plata|Crisis colonial~Antecedentes de la Revolución de Mayo"],
+"Ética":["Identidad y adolescencia~Quién soy y cómo me ven|Valores personales~Responsabilidad y libertad","Derechos humanos~Origen y Declaración Universal|Participación~Centros de estudiantes y voz joven","Convivencia digital~Privacidad e identidad en redes|Proyecto solidario~Trabajo comunitario"],
+"Física II":["Cinemática~Posición, velocidad y aceleración|Gráficos de movimiento~Interpretar gráficos posición-tiempo","Fuerzas~Concepto y representación con vectores|Leyes de Newton~Inercia, masa y acción-reacción","Trabajo y energía~Energía cinética y potencial|Calor y temperatura~Dilatación y transmisión del calor"]},
+3:{"Matemática":["Funciones~Concepto, tablas y gráficos|Función lineal~Pendiente y ordenada al origen","Sistemas de ecuaciones~Resolver por sustitución e igualación|Expresiones algebraicas~Operaciones con polinomios","Factoreo~Factor común y diferencia de cuadrados|Estadística~Media, moda y mediana"],
+"Lengua":["Novela~Narrador, tiempo y espacio|Texto argumentativo~Tesis, argumentos y conclusión","Terror y ciencia ficción~Rasgos de cada género|Oraciones compuestas~Coordinación y subordinación","Texto de opinión~Cómo defender un punto de vista|Ortografía avanzada~Acentuación y puntuación"],
+"Dibujo Asistido":["Entorno CAD~Interfaz, barras y comandos|Dibujo 2D básico~Líneas, círculos y capas","Edición y cotas~Recortar, copiar y acotar|Escalas y plantillas~Configurar hojas de impresión","Planos con CAD~Plano completo de una pieza|Exportación~Guardar en PDF y DWG"],
+"Inglés":["Past continuous~Acciones en progreso en el pasado|Present perfect~have/has + participio","Modals~can, must, should: habilidad y obligación|Technical vocabulary~Términos de computación","First conditional~If + presente, will + verbo|Technical reading~Entender manuales simples"],
+"Historia":["Revolución de Mayo~Causas y Primera Junta|Guerra de Independencia~San Martín, Belgrano y Güemes","Anarquía del año 20~Unitarios y federales|Rosas~Confederación y economía","Organización nacional~La Constitución de 1853|Argentina agroexportadora~Inmigración y modelo económico"],
+"Ética":["Dilemas morales~Cómo decidir entre opciones difíciles|Ética y tecnología~Uso responsable de la tecnología","Democracia~Poderes del Estado y voto|Derechos y deberes~Constitución Nacional","Diversidad~Respeto y no discriminación|Proyecto comunitario~Participación ciudadana"],
+"Hardware":["Componentes de la PC~Placa madre, CPU, RAM y fuente|Periféricos~Entrada, salida y almacenamiento","Ensamblado~Pasos para armar una PC con seguridad|Arranque~BIOS/UEFI y POST","Diagnóstico de fallas~Síntomas y soluciones comunes|Mantenimiento preventivo~Limpieza y cuidado"],
+"Física II":["Estática~Equilibrio de fuerzas|Presión~Presión y principio de Pascal","Electricidad~Carga, corriente y tensión|Ley de Ohm~V = I · R y circuitos","Magnetismo~Imanes y campo magnético|Ondas~Sonido y luz"],
+"Software":["Sistemas operativos~Funciones y tipos|Instalación de SO~Particiones y pasos","Software de aplicación~Ofimática y utilitarios|Gestión de archivos~Permisos y organización","Virtualización~Máquinas virtuales básicas|Seguridad básica~Antivirus y copias de respaldo"],
+"Lógica y Programación":["Algoritmos~Resolver problemas paso a paso|Diagramas de flujo~Símbolos y lectura","Variables y operadores~Tipos de datos y cálculos|Condicionales~if / else","Repetitivas~while y for|Funciones simples~Dividir un programa en partes"]},
+4:{"Matemática":["Función cuadrática~Parábola, vértice y raíces|Ecuación cuadrática~Fórmula resolvente","Trigonometría~Seno, coseno y tangente|Triángulos~Resolución y aplicaciones","Exponencial y logaritmo~Propiedades y gráficos|Probabilidad~Experimentos y sucesos"],
+"Lengua y Literatura":["Literatura argentina~Autores y épocas|Análisis literario~Tema, estructura y recursos","Teatro~Géneros y puesta en escena|Texto académico~Citar y resumir fuentes","Ensayo~Estructura y argumentación|Lectura crítica~Distinguir hechos de opiniones"],
+"Inglés":["Present perfect continuous~Acciones que continúan hasta hoy|Passive voice~Pasiva en presente y pasado","Conditionals~Primer y segundo condicional|Computer vocabulary~Hardware y software en inglés","Reported speech~Contar lo que dijo otra persona|Formal emails~Correo formal básico"],
+"Hardware II":["Procesadores~Arquitectura, núcleos y frecuencia|Memorias~RAM, ROM y caché","Almacenamiento~HDD, SSD y RAID|Buses y chipsets~Cómo se comunican los componentes","Fuentes de alimentación~Potencia y protecciones|Placas de video~GPU y su uso"],
+"Química":["Materia~Estados, propiedades y cambios|Átomo~Protones, neutrones y electrones","Tabla periódica~Grupos, períodos y propiedades|Enlaces~Iónico y covalente","Reacciones químicas~Ecuaciones y balanceo|Materiales electrónicos~Conductores y semiconductores"],
+"Software II":["Administración de SO~Usuarios y servicios|Línea de comandos~Comandos básicos","Instalación de software~Paquetes y dependencias|Scripts~Automatizar tareas simples","Bases de datos~Tablas y consultas básicas|Seguridad~Contraseñas y permisos"],
+"Lógica y Programación II":["Arreglos~Listas y recorridos|Cadenas~Manipular texto","Funciones~Parámetros y retorno|Archivos~Leer y escribir datos","Orientación a objetos~Clases y objetos|Depuración~Encontrar y corregir errores"],
+"Redes":["Conceptos de red~LAN, WAN y topologías|Modelo OSI~Las 7 capas","Direccionamiento IP~IPv4 y máscaras|Subredes~Dividir una red","Dispositivos~Switch, router y access point|Cableado~Normas y armado de cables UTP"]},
+5:{"Matemática":["Límites~Idea de límite y su cálculo|Continuidad~Funciones continuas y discontinuas","Derivadas~Concepto y reglas de derivación|Aplicaciones~Máximos y mínimos","Integrales~Primitivas y reglas básicas|Áreas~Área bajo una curva"],
+"Dibujo Asistido":["CAD 3D~Modelado de sólidos|Vistas y cortes~Generar vistas automáticas","Ensamblajes~Restricciones entre piezas|Planos de taller~Normas y lista de materiales","Circuitos en CAD~Esquemas electrónicos|Proyecto de diseño~Plano completo"],
+"Inglés":["Past perfect~Acciones anteriores a otras|Relative clauses~who, which, that","Technical reading~Manuales y especificaciones|Mixed conditionals~Combinar condicionales","CV and interviews~Armar un CV y entrevistas|Presentations~Exponer un proyecto"],
+"Lengua y Literatura II":["Literatura latinoamericana~Boom y realismo mágico|Divulgación~Explicar temas técnicos","Poesía del siglo XX~Vanguardias|Informe técnico~Estructura y redacción","Debate~Argumentar y rebatir|Textos laborales~CV y carta de presentación"],
+"Hardware III":["Servidores~Tipos y componentes|Virtualización~Recursos compartidos","Electrónica digital~Compuertas y lógica|Microcontroladores~Arduino y entradas/salidas","Cableado estructurado~Redes físicas|Integración~Armar y probar un equipo"],
+"Software III":["Servidores web~Apache y Nginx|Bases relacionales~Modelo y normalización","SQL~SELECT, INSERT y UPDATE|JOIN y subconsultas~Unir tablas","Control de versiones~Git y GitHub|Despliegue~Publicar una aplicación"],
+"Programación Web":["HTML~Estructura y etiquetas|CSS~Estilos y diseño responsive","JavaScript~Variables, funciones y eventos|DOM~Modificar páginas dinámicamente","Formularios~Capturar y validar datos|Proyecto web~Sitio completo"]},
+6:{"Probabilidad y Estadística":["Estadística descriptiva~Tablas, medias y dispersión|Probabilidad~Sucesos y regla de Laplace","Distribuciones~Binomial y normal|Muestreo~Poblaciones y muestras","Inferencia~Intervalos de confianza|Regresión~Relación entre variables"],
+"Inglés":["Technical English~Documentación y manuales|Passive voice avanzada~Textos técnicos","Job interviews~Preguntas frecuentes|Writing reports~Informes en inglés","Presentations~Exponer proyectos|Exam practice~Repaso integral"],
+"Mantenimiento de Hardware":["Diagnóstico~Metodología y herramientas|Preventivo~Cronograma y limpieza","Reparación~Cambio de componentes|Pruebas de estrés~Verificar estabilidad","Reciclaje electrónico~Residuos y normativa|Documentación~Registro de intervenciones"],
+"Mantenimiento de Software":["Actualizaciones~Parches y versiones|Backups~Estrategias de copia de seguridad","Recuperación~Restaurar sistemas|Malware~Detección y eliminación","Monitoreo~Rendimiento y logs|Soporte técnico~Atención al usuario"],
+"Programación Web II":["Backend~Servidores y rutas|APIs REST~Diseñar y consumir","Bases de datos en web~Conexión y CRUD|Autenticación~Login y sesiones","Seguridad web~Inyección SQL y XSS|Despliegue~Publicar en producción"],
+"Microemprendimiento":["Idea de negocio~Detectar oportunidades|Estudio de mercado~Clientes y competencia","Plan de negocio~Estructura y objetivos|Costos y precios~Calcular ganancias","Marketing~Promoción y redes|Presentación~Defender el emprendimiento"],
+"Proyecto":["Definición~Problema y objetivos|Planificación~Cronograma y roles","Desarrollo~Construcción por etapas|Pruebas~Verificar funcionamiento","Documentación~Informe final|Defensa~Presentación oral"],
+"Marco Jurídico":["Derecho y norma~Qué es y cuáles son sus fuentes|Constitución Nacional~Derechos y garantías","Contratos~Tipos y obligaciones|Propiedad intelectual~Derechos de autor y licencias","Derecho laboral~Contrato de trabajo y derechos|Delitos informáticos~Ley y protección de datos"]}
+};
+const PROFES={
+ profana:{nombre:"Prof. Ana Gómez",mats:["*:Matemática","6:Probabilidad y Estadística"]},
+ profluis:{nombre:"Prof. Luis Pérez",mats:["*:Lengua","4:Lengua y Literatura","5:Lengua y Literatura II","*:Historia"]},
+ profmarta:{nombre:"Prof. Marta Díaz",mats:["*:Ética","6:Marco Jurídico"]},
+ profjulia:{nombre:"Prof. Julia Romero",mats:["*:Inglés"]},
+ profroberto:{nombre:"Prof. Roberto Silva",mats:["1:Dibujo Técnico","2:Dibujo Técnico II","*:Dibujo Asistido"]},
+ proflaura:{nombre:"Prof. Laura Acosta",mats:["*:Tecnología","6:Microemprendimiento","6:Proyecto"]},
+ profjorge:{nombre:"Prof. Jorge Ramírez",mats:["*:Física II","4:Química","*:Hardware","*:Hardware II","*:Hardware III","6:Mantenimiento de Hardware"]},
+ profsofia:{nombre:"Prof. Sofía Torres",mats:["*:Software","*:Software II","*:Software III","*:Lógica y Programación","*:Lógica y Programación II","*:Programación Web","*:Programación Web II","6:Mantenimiento de Software"]},
+ profcarlos:{nombre:"Prof. Carlos Benítez",mats:["4:Redes"]}
+};
+const USERS={};
+for(let i=1;i<=6;i++)USERS["alumno"+i]={rol:"E",pass:"1234",anio:i,nombre:"Estudiante de "+i+".º año"};
+for(const[k,v]of Object.entries(PROFES))USERS[k]={rol:"P",pass:"1234",nombre:v.nombre,mats:v.mats};
+const $=id=>document.getElementById(id);
+let user=null,rol="E",H={},dbc=null,sel={},cur=null,q="";
+const key=(a,m,t)=>a+"_"+Object.keys(TEMARIO[a]).indexOf(m)+"_"+t;
+const estaHab=(a,m,t)=>{const k=key(a,m,t);return k in H?H[k]:t===0};
+function loadLocal(){try{H=JSON.parse(localStorage.getItem("campus34_hab")||"{}")}catch(e){H={}}}
+function saveLocal(){try{localStorage.setItem("campus34_hab",JSON.stringify(H))}catch(e){}}
+loadLocal();
+(async()=>{try{const db=await claude.use("db");if(!db)return;dbc=db.collection("hab");
+ dbc.onSnapshot(s=>{const n={};s.docs.forEach(d=>{const x=d.data();if(x)n[d.id]=!!x.on});H=n;if(user)render()},()=>{dbc=null})}catch(e){dbc=null}})();
+async function setHab(a,m,t,on){const k=key(a,m,t);H[k]=on;
+ if(dbc){try{await dbc.doc(k).set({on})}catch(e){alert("No se pudo guardar el cambio. ¿Tenés permiso de edición?")}}else saveLocal();render()}
+// ---- Información por tipo de materia ----
+function cat(m){if(/^(Matemática|Probabilidad)/.test(m))return"mate";if(/^(Física|Química)/.test(m))return"cien";if(/^(Lengua|Historia|Ética|Marco)/.test(m))return"lect";
+ if(/^Inglés/.test(m))return"ing";if(/^Dibujo/.test(m))return"dib";if(/^(Lógica|Programación)/.test(m))return"prog";if(/^(Proyecto|Microemprendimiento)/.test(m))return"proy";return"tec"}
+const EVAL={mate:[2,2],cien:[2,2],lect:[2,1],ing:[2,2],dib:[3,0],prog:[3,1],proy:[2,0],tec:[3,1]}; // [trabajos prácticos, pruebas] por trimestre (estimado)
+const GUIA={
+mate:["Leé la teoría y escribí con tus palabras qué es «{t}»: {d}.","Copiá las fórmulas o reglas y un ejemplo resuelto de cada una.","Resolvé al menos 5 ejercicios, de fácil a difícil, sin mirar el ejemplo.","Corregí con tu profesor o compañeros y marcá los errores para repasar antes de la prueba."],
+lect:["Leé el material y subrayá las ideas principales de «{t}»: {d}.","Armá un esquema o cuadro con los conceptos, fechas o autores clave.","Respondé en voz alta: ¿qué es?, ¿por qué importa?, ¿cómo se relaciona con el tema anterior?","Hacé un resumen de 5 líneas y compará con tu carpeta."],
+ing:["Repasá la estructura de «{t}»: {d}.","Escribí 5 oraciones propias usando el tema.","Armá una lista de vocabulario nuevo con su traducción.","Leé un texto corto y subrayá dónde aparece el tema."],
+dib:["Mirá los ejemplos de «{t}» en tu carpeta: {d}.","Practicá el procedimiento (en papel o en el programa) con un ejercicio de borrador.","Repetilo sin mirar el modelo y compará el resultado.","Revisá la prolijidad: líneas, rótulo y medidas."],
+prog:["Entendé la idea de «{t}»: {d}.","Escribí el ejemplo del profesor sin copiarlo y probá que funcione.","Modificalo: cambiá valores y mirá qué pasa.","Resolvé un ejercicio nuevo por tu cuenta y anotá los errores que te aparecieron."],
+proy:["Releé el objetivo de «{t}»: {d}.","Anotá qué entregas o avances te pide el profesor.","Armá un plan con fechas para cada parte.","Pedí una revisión antes de la entrega."],
+tec:["Entendé el concepto de «{t}»: {d}.","Hacé un resumen con los términos técnicos y qué hace cada uno.","Practicá en el taller, el laboratorio o un simulador lo que viste.","Anotá los pasos y los errores comunes para poder explicarlo."]};
+function evalInfo(m){let[tp,pr]=EVAL[cat(m)];if(m==="Ética")pr=0;return{tp,pr}}
+function guia(m,top){const[t,d]=top.split("~");return GUIA[cat(m)].map(s=>s.replace("{t}",t).replace("{d}",d))}
+const hue=s=>{let h=0;for(const c of s)h=(h*31+c.charCodeAt(0))%360;return h};
+// ---- Vistas ----
+function setRol(r){rol=r;$("rE").classList.toggle("on",r==="E");$("rP").classList.toggle("on",r==="P");
+ $("hint").innerHTML=r==="E"?"Demo: <b>alumno1</b> a <b>alumno6</b> (según el año), contraseña <b>1234</b>.":"Demo: <b>profana</b>, <b>profluis</b>, <b>profmarta</b>, <b>profjulia</b>, <b>profroberto</b>, <b>proflaura</b>, <b>profjorge</b>, <b>profsofia</b>, <b>profcarlos</b>. Contraseña <b>1234</b>."}
+$("rE").onclick=()=>setRol("E");$("rP").onclick=()=>setRol("P");setRol("E");
+function login(){const u=USERS[$("u").value.trim().toLowerCase()];
+ if(!u||u.pass!==$("c").value||u.rol!==rol){$("err").textContent="Usuario o contraseña incorrectos.";return}
+ user=u;cur=null;$("err").textContent="";$("vLogin").classList.add("hide");$("vApp").classList.remove("hide");render()}
+function render(){user.rol==="E"?renderE():renderP()}
+function hero(t,p,c){return"<div class='hero'><span class='chip'>"+c+"</span><h1>"+t+"</h1><p>"+p+"</p></div>"}
+function renderE(){const a=user.anio,M=$("main");
+ if(cur&&!TEMARIO[a][cur])cur=null;
+ if(!cur){
+  M.innerHTML=hero("Hola 👋","Acá encontrás el temario de cada materia, trimestre por trimestre. Los trimestres se habilitan a medida que avanzás.",a+".º año")+"<input class='search' id='q' placeholder='Buscar materia…' aria-label='Buscar materia'><div class='grid' id='cards'></div>";
+  $("q").value=q;$("q").oninput=e=>{q=e.target.value;cards()};cards();return}
+ const tris=TEMARIO[a][cur],{tp,pr}=evalInfo(cur);
+ const last=tris.reduce((r,_,t)=>estaHab(a,cur,t)?t:r,0),t0=sel[a+cur]??last;
+ M.innerHTML="<button class='ghost back' id='bk'>← Mis materias</button><div class='dh'><div class='ic' style='--h:"+hue(cur)+";margin:0'>"+cur[0]+"</div><div><h2>"+cur+"</h2><small>"+a+".º año</small></div></div><div class='tabs' id='tb'></div><div id='bd'></div>";
+ $("bk").onclick=()=>{cur=null;renderE();scrollTo(0,0)};
+ const show=t=>{sel[a+cur]=t;[...$("tb").children].forEach((b,i)=>b.classList.toggle("on",i===t));
+  const bd=$("bd");if(!estaHab(a,cur,t)){bd.innerHTML="<div class='locked'><div style='font-size:2rem'>🔒</div><b>Este trimestre todavía no está habilitado</b><br>Tu profesor lo va a habilitar cuando empiece el trimestre.</div>";return}
+  const tops=tris[t].split("|"),n=tops.map(x=>x.split("~"));
+  bd.innerHTML="<div class='card'><h3 class='th'>Qué vas a ver este trimestre</h3><p class='intro'>Empezás con <b>«"+n[0][0]+"»</b> ("+n[0][1]+") y después seguís con <b>«"+n[1][0]+"»</b> ("+n[1][1]+").</p><div class='chips'><div class='cp'><b>📝 "+tp+"</b>trabajos prácticos</div><div class='cp'><b>"+(pr?"✅ "+pr:"—")+"</b>"+(pr?(pr===1?"prueba escrita":"pruebas escritas"):"sin pruebas escritas: se evalúa con trabajos")+"</div></div><div class='note'>Las cantidades son estimadas: tu profesor confirma las fechas y puede ajustarlas.</div></div>"+
+   tops.map((x,i)=>"<details"+(i===0?" open":"")+"><summary><div>"+n[i][0]+"<span>"+n[i][1]+"</span></div></summary><div class='gb'><h4>📖 Guía de estudio</h4><ol>"+guia(cur,x).map(s=>"<li>"+s+"</li>").join("")+"</ol></div></details>").join("")};
+ tris.forEach((_,t)=>{const h=estaHab(a,cur,t),b=document.createElement("button");b.className="tab"+(h?"":" lock");b.textContent=(h?"":"🔒 ")+(t+1)+".º trimestre";b.onclick=()=>show(t);$("tb").appendChild(b)});
+ show(t0)}
+function cards(){const a=user.anio,box=$("cards");box.innerHTML="";
+ Object.entries(TEMARIO[a]).filter(([m])=>m.toLowerCase().includes(q.trim().toLowerCase())).forEach(([m,tr])=>{
+  const b=document.createElement("button");b.className="sc";b.style.setProperty("--h",hue(m));
+  const on=tr.filter((_,t)=>estaHab(a,m,t)).length;
+  b.innerHTML="<div class='ic'>"+m[0]+"</div><b>"+m+"</b><div class='dots'>"+tr.map((_,t)=>"<i class='"+(estaHab(a,m,t)?"on":"")+"'></i>").join("")+"</div><small>"+on+" de 3 trimestres disponibles</small>";
+  b.onclick=()=>{cur=m;renderE();scrollTo(0,0)};box.appendChild(b)});
+ if(!box.children.length)box.innerHTML="<p style='color:var(--mu)'>No encontramos esa materia.</p>"}
+function mine(a,m){return user.mats.some(x=>{const[ya,ym]=x.split(":");return(ya==="*"||ya==a)&&ym===m})}
+function renderP(){const M=$("main");
+ M.innerHTML=hero("Hola, "+user.nombre,"Activá el interruptor de un trimestre para que tus estudiantes vean su temario. Solo aparecen tus materias.","Panel de profesores");
+ for(let a=1;a<=6;a++)Object.keys(TEMARIO[a]).forEach(m=>{if(!mine(a,m))return;
+  const tris=TEMARIO[a][m],s=document.createElement("div");s.className="card";
+  const h2=document.createElement("h3");h2.className="th";h2.textContent=m;const p=document.createElement("span");p.className="pill";p.textContent=a+".º año";h2.appendChild(p);s.appendChild(h2);
+  tris.forEach((tp,t)=>{const on=estaHab(a,m,t),r=document.createElement("div");r.className="row";
+   r.innerHTML="<div><b>"+(t+1)+".º trimestre</b><small></small></div>";r.querySelector("small").textContent=tp.split("|").map(x=>x.split("~")[0]).join(" · ");
+   const b=document.createElement("button");b.className="sw"+(on?" on":"");b.setAttribute("role","switch");b.setAttribute("aria-checked",on);b.setAttribute("aria-label",m+" "+a+".º año, "+(t+1)+".º trimestre");
+   b.onclick=()=>setHab(a,m,t,!on);r.appendChild(b);s.appendChild(r)});
+  M.appendChild(s)})}
+$("go").onclick=login;$("c").addEventListener("keydown",e=>{if(e.key==="Enter")login()});
+$("out").onclick=()=>{user=null;cur=null;$("c").value="";$("vApp").classList.add("hide");$("vLogin").classList.remove("hide")};
+</script>
+</body>
+</html>
